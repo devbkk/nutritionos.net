@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Nutrition.Api.Models
 {
-    public class TryLearnContext
+    public class TryLearnContext : DbContext
     {
         public TryLearnContext(DbContextOptions<TryLearnContext> options) : base(options)
         {
