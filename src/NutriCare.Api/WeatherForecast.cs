@@ -1,4 +1,4 @@
-namespace Nutrition.Api;
+namespace NutriCare.Api;
 
 public class WeatherForecast
 {
