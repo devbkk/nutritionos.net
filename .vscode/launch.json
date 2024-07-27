@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Docker: NutriCare Launch API",
+      "type": "docker",
+      "request": "launch",
+      "preLaunchTask": "docker-run: debug",
+      "platform": "node",
+      "program": "${workspaceFolder}/src/NutriCare.API.dll",
+      "dockerServerReadyAction": {
+        "uriFormat": "%s://localhost:%s",
+        "action": "openExternally",
+        "pattern": "Listening on port ([0-9]+)"
+      }
+    },
+    {
+      "name": "Docker: NutriCare Launch Web",
+      "type": "docker",
+      "request": "launch",
+      "preLaunchTask": "docker-run: debug-web",
+      "platform": "node",
+      "program": "${workspaceFolder}/src/NutriCare.Web.dll",
+      "dockerServerReadyAction": {
+        "uriFormat": "%s://localhost:%s",
+        "action": "openExternally",
+        "pattern": "Now listening on: (http://localhost:[0-9]+)"
+      }
+    }
+  ]
+}

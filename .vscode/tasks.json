@@ -1,0 +1,37 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "docker-run: debug",
+      "type": "docker-run",
+      "dockerRun": {
+        "image": "nutricare-api:dev",
+        "ports": [
+          {
+            "hostPort": 5000,
+            "containerPort": 80
+          }
+        ],
+        "env": {
+          "ASPNETCORE_ENVIRONMENT": "Development"
+        }
+      }
+    },
+    {
+      "label": "docker-run: debug-web",
+      "type": "docker-run",
+      "dockerRun": {
+        "image": "nutricare-web:dev",
+        "ports": [
+          {
+            "hostPort": 5002,
+            "containerPort": 80
+          }
+        ],
+        "env": {
+          "ASPNETCORE_ENVIRONMENT": "Development"
+        }
+      }
+    }
+  ]
+}

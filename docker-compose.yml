@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  api:
+    image: nutricare-api
+    build:
+      context: .
+      dockerfile: src/NutriCare.Api/Dockerfile
+    ports:
+      - "5000:80"
+    depends_on:
+      - db
+  db:
+    image: mcr.microsoft.com/mssql/server
+    environment:
+      SA_PASSWORD: "Suparuksa3113#"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "5533:1433"
+  report:
+    image: nutricare-report
+    build:
+      context: .
+      dockerfile: src/NutriCare.Reporting/Dockerfile
+    ports:
+      - "5001:80"
