@@ -3,11 +3,15 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using NutriCare.Api.Data;
+using NutriCare.Api.Interfaces;
+using NutriCare.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add controllers to the container.
 builder.Services.AddControllers();
+
+builder.Services.AddSingleton<ITokenService, TokenService>();
 
 // Configure DbContext based on environment
 if (builder.Environment.IsDevelopment())
