@@ -1,4 +1,4 @@
-namespace NutriCare.Api.Models
+namespace NutriCare.Api.Models.Request
 {
   public class LoginRequestModel
   {
